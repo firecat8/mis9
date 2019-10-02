@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.gkd.recipes.dto">
+    <class
+        name="ProductDto"
+        table="products"
+    >
+        
+        <id name="id" type="int">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" type="string" unique="true" />
+        
+        <many-to-one name="category" column="category_id" class="com.gkd.recipes.dto.CategoryDto" cascade="all" ></many-to-one>
+        
+    </class>
+</hibernate-mapping>
