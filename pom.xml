@@ -11,15 +11,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
+        <javafx.version>13</javafx.version>
         <junit.version>4.12</junit.version>
     </properties>
     <modules>
         <module>business-logic</module>
         <module>persistence</module>
         <module>domain</module>
-    <module>client-jfx</module>
-  </modules>
-   
+        <module>dao-api</module>
+        <module>client-app</module>
+    </modules>
+    <repositories>
+        <repository>
+            <id>gluonhq-repo</id>
+            <name>Gluonhq repo</name>
+            <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
     <dependencyManagement>
         <dependencies>
             <dependency>
