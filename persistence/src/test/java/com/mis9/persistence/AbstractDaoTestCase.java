@@ -3,6 +3,7 @@
  */
 package com.mis9.persistence;
 
+import com.mis9.domain.Entity;
 import com.mis9.persistence.dao.AbstractDao;
 import com.mis9.persistence.dao.DaoRegistryImpl;
 import com.mis9.persistence.dao.EntityManagerFactoryHolder;
@@ -19,7 +20,7 @@ import junit.framework.TestCase;
  * @param <E>
  * @param <Dao>
  */
-public abstract class AbstractDaoTestCase<E, Dao extends AbstractDao<E>> extends TestCase {
+public abstract class AbstractDaoTestCase<E extends Entity, Dao extends AbstractDao<E>> extends TestCase {
 
     private EntityManagerFactory factory;
 

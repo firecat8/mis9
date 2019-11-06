@@ -23,11 +23,15 @@ public class ServiceProvider {
 
     private final EntityManagerFactory factory = EntityManagerFactoryHolder.getFactory();
 
-    private  EntityManager em = factory.createEntityManager();
+    private EntityManager em = factory.createEntityManager();
 
     private final DaoRegistry registry = new DaoRegistryImpl(em);
 
     private ServiceProvider() {
+    }
+
+    public void flush() {
+        em.flush();
     }
 
     public void beginTransaction() {

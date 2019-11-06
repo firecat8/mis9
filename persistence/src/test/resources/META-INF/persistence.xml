@@ -10,7 +10,7 @@
         <class>com.mis9.persistence.dto.SoldItemDto</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:~/databases/mis9test/db"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:~/databases/mis9/db"/>
             <property name="javax.persistence.jdbc.user" value="admin"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name ="hibernate.show_sql" value = "true" />

@@ -17,7 +17,7 @@ public abstract class AbstractDto implements Entity, Serializable {
     @Id
     @GeneratedValue(generator = "id")
     @GenericGenerator(name = "id", strategy = "increment")
-    private int id;
+    protected int id;
 
     @Override
     public int getId() {
@@ -27,5 +27,5 @@ public abstract class AbstractDto implements Entity, Serializable {
     private void setId(int id) {
         this.id = id;
     }
-
+    
 }

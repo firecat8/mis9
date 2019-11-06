@@ -12,7 +12,7 @@ public interface Client extends Entity {
 
     public String getSurname();
 
-    public void setgetSurname(String surname);
+    public void setSurname(String surname);
 
     public String getLastName();
 

@@ -5,6 +5,7 @@
  */
 package com.mis9.client.app;
 
+import com.mis9.bl.ServiceProvider;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +27,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private Button loginBtn;
+    
+    private ServiceProvider svcProvider = ServiceProvider.INSTANCE;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {

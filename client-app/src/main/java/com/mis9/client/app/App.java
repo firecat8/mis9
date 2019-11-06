@@ -15,18 +15,21 @@ public class App extends Application {
 
     private static Scene scene;
 
+    public static Stage mainStage;
+
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"));
-        stage.setScene(scene);
-        stage.show();
+        mainStage = stage;
+        scene = new Scene(loadFXML("sales_system"));
+        mainStage.setScene(scene);
+        mainStage.setResizable(false);
+        mainStage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
-        Stage stage = new Stage();
-        scene = new Scene(loadFXML(fxml));
-        stage.setScene(scene);
-        stage.show();
+        mainStage.setScene(new Scene(loadFXML(fxml)));
+        mainStage.setResizable(false);
+        mainStage.show();
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

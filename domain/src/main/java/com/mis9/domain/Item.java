@@ -4,7 +4,7 @@ package com.mis9.domain;
  *
  * @author gdimitrova
  */
-public interface Item<IC extends ItemCategory> extends Entity {
+public interface Item extends Entity {
 
     public String getName();
 
@@ -26,7 +26,13 @@ public interface Item<IC extends ItemCategory> extends Entity {
 
     public void setAmount(int amount);
 
-    public IC getItemCategory();
+    public ItemCategory getItemCategory();
 
-    public void setItemCategory(IC category);
+    public void setItemCategory(ItemCategory category);
+
+    public Item makeCopy();
+
+    public Item copyFrom(Item source);
+
+    public void init(String name, ItemCategory category, String description, Size itemSize, double price, int amount);
 }

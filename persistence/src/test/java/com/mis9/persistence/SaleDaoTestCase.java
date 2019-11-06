@@ -39,11 +39,11 @@ public class SaleDaoTestCase extends AbstractCrudDaoTestCase<SaleDto, SaleDaoImp
     }
 
     public static SaleDto createDefault(ItemDto item) {
-        return new SaleDto(client, new Date(0), item.getAmount(), item.getPrice());
+        return new SaleDto(client,0, item.getAmount(), item.getPrice());
     }
 
     public static SaleDto createEntity(Client client, Date saleDate, int amount, double totalPrice) {
-        return new SaleDto(client, saleDate, amount, totalPrice);
+        return new SaleDto(client, saleDate.getTime(), amount, totalPrice);
     }
 
     public static List<SaleDto> createSales(List<ItemDto> items) {

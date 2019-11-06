@@ -26,21 +26,21 @@ public class ItemDaoTestCase extends AbstractSearchDaoTestCase<ItemDto, ItemDaoI
         testLoadByPrice(dao::loadByPriceEqual, 10, 1);
     }
 
-    public void testLoadByCategory() {
-        List<ItemDto> actual = new ArrayList<>();
-        try {
-            beginTransaction();
-            List<ItemDto> itemDtos = createEntities();
-            actual = dao.loadByCategory(itemDtos.get(0).getItemCategory());
-            commit();
-        } catch (Exception e) {
-            System.err.println("\n Couldn't load by category \n" + e.getMessage() + "\n");
-            if (getTransaction() != null) {
-                rollback();
-            }
-        }
-        assertEquals("Expected 2, actual " + actual.size(), 2, actual.size());
-    }
+//    public void testLoadByCategory() {
+//        List<ItemDto> actual = new ArrayList<>();
+//        try {
+//            beginTransaction();
+//            List<ItemDto> itemDtos = createEntities();
+//            actual = dao.loadByCategory(itemDtos.get(0).getItemCategory());
+//            commit();
+//        } catch (Exception e) {
+//            System.err.println("\n Couldn't load by category \n" + e.getMessage() + "\n");
+//            if (getTransaction() != null) {
+//                rollback();
+//            }
+//        }
+//        assertEquals("Expected 2, actual " + actual.size(), 2, actual.size());
+//    }
 
     @Override
     protected String getEntityName() {

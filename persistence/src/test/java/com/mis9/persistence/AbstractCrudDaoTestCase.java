@@ -15,21 +15,21 @@ import java.util.List;
  */
 public abstract class AbstractCrudDaoTestCase<E extends Entity, Dao extends AbstractCrudDao<E>> extends AbstractDaoTestCase<E, Dao> {
 
-    public void testSave() {
-        boolean isSuccess = true;
-        try {
-            beginTransaction();
-            dao.save(createEntity());
-            commit();
-        } catch (Exception e) {
-            isSuccess = false;
-            System.err.println("\n Couldn't save \n" + e.getMessage() + "\n");
-            if (getTransaction() != null) {
-                rollback();
-            }
-        }
-        assertTrue("Couldn't save", isSuccess);
-    }
+//    public void testSave() {
+//        boolean isSuccess = true;
+//        try {
+//            beginTransaction();
+//            dao.save(createEntity());
+//            commit();
+//        } catch (Exception e) {
+//            isSuccess = false;
+//            System.err.println("\n Couldn't save \n" + e.getMessage() + "\n");
+//            if (getTransaction() != null) {
+//                rollback();
+//            }
+//        }
+//        assertTrue("Couldn't save", isSuccess);
+//    }
 
     public void testSaveAll() {
         boolean isSuccess = true;

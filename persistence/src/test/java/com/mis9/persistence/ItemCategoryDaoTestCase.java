@@ -11,23 +11,6 @@ import java.util.List;
  */
 public class ItemCategoryDaoTestCase extends AbstractSearchDaoTestCase<ItemCategoryDto, ItemCategoryDaoImpl> {
 
-    public void testLoadAllSubcategories() {
-        List<ItemCategoryDto> actual = new ArrayList<>();
-        try {
-            beginTransaction();
-            List<ItemCategoryDto> categoryDtos = createCategories();
-            dao.saveAll(categoryDtos);
-            actual = dao.loadAllSubcategories(categoryDtos.get(0));
-            commit();
-        } catch (Exception e) {
-            System.err.println("\n Couldn't load all subCategories \n" + e.getMessage() + "\n");
-            if (getTransaction() != null) {
-                rollback();
-            }
-        }
-        assertEquals("Expected 2, actual" + actual.size(), actual.size(), 2);
-    }
-
     @Override
     protected String getEntityName() {
         return createEntity().getName();
@@ -49,18 +32,18 @@ public class ItemCategoryDaoTestCase extends AbstractSearchDaoTestCase<ItemCateg
     }
 
     public static ItemCategoryDto createDefault() {
-        return createEntity("default", null);
+        return createEntity("default");
     }
 
-    private static ItemCategoryDto createEntity(String name, ItemCategoryDto category) {
-        return new ItemCategoryDto(name, category);
+    private static ItemCategoryDto createEntity(String name) {
+        return new ItemCategoryDto(name);
     }
 
     public static List<ItemCategoryDto> createCategories() {
         List<ItemCategoryDto> categories = new ArrayList<>();
-        categories.add(createEntity("Clothes", null));
-        categories.add(createEntity("T-shirts", categories.get(0)));
-        categories.add(createEntity("Sweaters", categories.get(0)));
+        categories.add(createEntity("Clothes"));
+        categories.add(createEntity("T-shirts"));
+        categories.add(createEntity("Sweaters"));
         return categories;
     }
 

@@ -1,9 +1,9 @@
 package com.mis9.persistence.dao;
 
 import com.mis9.dao.ItemCategoryDao;
-import com.mis9.domain.ItemCategory;
 import com.mis9.persistence.dto.ItemCategoryDto;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import javax.persistence.EntityManager;
 
 /**
@@ -17,7 +17,10 @@ public class ItemCategoryDaoImpl extends AbstractSearchDao<ItemCategoryDto> impl
     }
 
     @Override
-    public List<ItemCategoryDto> loadAllSubcategories(ItemCategory category) {
-        return getResults(ItemCategoryDto.PARENT_CATEGORY, category);
+    protected Map<String, Object> loadProperties(ItemCategoryDto newOne) {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ItemCategoryDto.NAME, newOne.getName());
+        return props;
     }
+
 }

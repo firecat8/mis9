@@ -12,13 +12,19 @@ import java.util.List;
  */
 public interface CrudDao<Entity> {
 
+    public void update(Entity oldOne);
+
     public void save(Entity entity);
 
     public void delete(int id);
 
+    public void deleteAll(List<Entity> list);
+
     public Entity loadById(int id) throws NotFoundResultsException;
 
     public void saveAll(List<Entity> entities);
+
+//    public void updateAll(List<Entity> entities);
 
     public List<Entity> loadAll();
 }
